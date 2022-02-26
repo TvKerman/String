@@ -6,10 +6,8 @@
 
 #IncludeRegexTransform: 
 
-D:/Git/String/main.c
-stdio.h
--
-string/string_.h
+D:/Git/String/string/string_.c
+string_.h
 D:/Git/String/string/string_.h
 
 D:/Git/String/string/string_.h

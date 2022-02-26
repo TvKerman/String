@@ -87,6 +87,7 @@ String_EXTERNAL_OBJECTS =
 
 String.exe: CMakeFiles/String.dir/main.c.obj
 String.exe: CMakeFiles/String.dir/build.make
+String.exe: libstr.a
 String.exe: CMakeFiles/String.dir/linklibs.rsp
 String.exe: CMakeFiles/String.dir/objects1.rsp
 String.exe: CMakeFiles/String.dir/link.txt
