@@ -3,8 +3,9 @@
 //
 
 #include "string_.h"
+#include <memory.h>
 
-size_t strlen_ (const char *begin) {
+size_t strlen_(const char *begin) {
     char *end = begin;
     while (*end != '\0') {
         end++;
@@ -60,4 +61,36 @@ int strcmp(const char *lhs, const char *rhs) {
     }
 
     return *lhs - *rhs;
+}
+
+char* copy(const char *beginSource, const char *endSource, char *beginDestination) {
+    size_t size = endSource - beginSource + 1;
+    memcpy(beginDestination, beginSource, size);
+    return beginDestination + size;
+}
+
+char* copyIf(char *beginSource, const char *endSource, char *beginDestination, int (*f)(int)) {
+    size_t size = endSource - beginSource + 1;
+    for (size_t i = 0; i < size; i++) {
+        if (f(*beginSource)) {
+            *(beginDestination++) = *(beginSource++);
+        } else {
+            beginSource++;
+        }
+    }
+
+    return beginDestination;
+}
+
+char* copyIfReverse(char *rbeginSource, const char *rendSource, char *beginDestination, int (*f)(int)) {
+    size_t size = rbeginSource - rendSource + 1;
+    for (size_t i = 0; i < size; i++) {
+        if (f(*rbeginSource)) {
+            *(beginDestination++) = *(rbeginSource--);
+        } else {
+            rbeginSource--;
+        }
+    }
+
+    return beginDestination;
 }

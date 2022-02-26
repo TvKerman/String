@@ -9,8 +9,10 @@
 D:/Git/String/string/string_.c
 string_.h
 D:/Git/String/string/string_.h
+memory.h
+-
 
 D:/Git/String/string/string_.h
-stdlib.h
+stdio.h
 -
 
