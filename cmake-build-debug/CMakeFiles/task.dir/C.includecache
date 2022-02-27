@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Git/String/tasks/removeAllWhitespaceCharactersFromTheString.c
+removeAllWhitespaceCharactersFromTheString.h
+D:/Git/String/tasks/removeAllWhitespaceCharactersFromTheString.h
+
+D:/Git/String/tasks/removeAllWhitespaceCharactersFromTheString.h
+string/string_.h
+D:/Git/String/tasks/string/string_.h
+

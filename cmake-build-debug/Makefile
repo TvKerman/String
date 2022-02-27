@@ -116,6 +116,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named project
+
+# Build rule for target.
+project: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 project
+.PHONY : project
+
+# fast build rule for target.
+project/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/build
+.PHONY : project/fast
+
+#=============================================================================
 # Target rules for targets named str
 
 # Build rule for target.
@@ -128,25 +141,12 @@ str/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\str.dir\build.make CMakeFiles/str.dir/build
 .PHONY : str/fast
 
-#=============================================================================
-# Target rules for targets named String
-
-# Build rule for target.
-String: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 String
-.PHONY : String
-
-# fast build rule for target.
-String/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\String.dir\build.make CMakeFiles/String.dir/build
-.PHONY : String/fast
-
 main.obj: main.c.obj
 .PHONY : main.obj
 
 # target to build an object file
 main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\String.dir\build.make CMakeFiles/String.dir/main.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/main.c.obj
 .PHONY : main.c.obj
 
 main.i: main.c.i
@@ -154,7 +154,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\String.dir\build.make CMakeFiles/String.dir/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -162,7 +162,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\String.dir\build.make CMakeFiles/String.dir/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project.dir\build.make CMakeFiles/project.dir/main.c.s
 .PHONY : main.c.s
 
 string/string_.obj: string/string_.c.obj
@@ -197,7 +197,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... String
+	@echo ... project
 	@echo ... str
 	@echo ... main.obj
 	@echo ... main.i

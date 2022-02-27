@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Git/String/main.c
+stdio.h
+-
+string/string_.h
+D:/Git/String/string/string_.h
+string/tasks/removeNonLetters.h
+D:/Git/String/string/tasks/removeNonLetters.h
+
+D:/Git/String/string/string_.h
+stdio.h
+-
+
+D:/Git/String/string/tasks/removeNonLetters.h
+

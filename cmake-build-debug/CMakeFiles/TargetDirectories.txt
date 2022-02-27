@@ -1,4 +1,4 @@
+D:/Git/String/cmake-build-debug/CMakeFiles/project.dir
 D:/Git/String/cmake-build-debug/CMakeFiles/edit_cache.dir
 D:/Git/String/cmake-build-debug/CMakeFiles/str.dir
-D:/Git/String/cmake-build-debug/CMakeFiles/String.dir
 D:/Git/String/cmake-build-debug/CMakeFiles/rebuild_cache.dir
