@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "string/string_.h"
 #include "string/tasks/removeNonLetters.h"
+#include "string/tasks/removeExtraSpaces.h"
 
 int f(int a) {
     return '0' <= a && a <= '9';
@@ -24,8 +25,16 @@ void test_removeNonLetters_oneWord() {
     ASSERT_STRING("Hi123", s);
 }
 
+void test_removeExtraSpaces_manySpace() {
+    char s[] = "Hi   123";
+    removeExtraSpaces(s);
+    ASSERT_STRING("Hi 123", s);
+}
+
+
 void tests() {
     test_removeNonLetters_oneWord();
+    test_removeExtraSpaces_manySpace();
 }
 
 int main() {
