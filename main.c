@@ -4,6 +4,7 @@
 #include "string/tasks/removeExtraSpaces.h"
 #include "string/tasks/convertStringDigitsTheEnd.h"
 #include "string/tasks/digitCorrespondingNumberOfSpaces.h"
+#include "string/tasks/replace.h"
 
 int f(int a) {
     return '0' <= a && a <= '9';
@@ -63,6 +64,23 @@ void test_digitCorrespondingNumberOfSpaces_thereAreNumbers() {
     ASSERT_STRING("A   BC ", s);
 }
 
+void test_replace_w1SizeLessW2Size() {
+    char s[MAX_STRING_SIZE] = "Hello  World";
+    char w1[] = "World";
+    char w2[] = "<No_name>";
+    replace(s, w1, w2);
+    ASSERT_STRING("Hello  <No_name>", s);
+}
+
+void test_replace_w2SizeLessW1Size() {
+    char s[MAX_STRING_SIZE] = "Hello  World";
+    char w1[] = "World";
+    char w2[] = "You";
+    replace(s, w1, w2);
+    ASSERT_STRING("Hello  You", s);
+}
+
+
 void tests() {
     test_removeNonLetters_oneWord();
     test_removeExtraSpaces_manySpace();
@@ -71,6 +89,8 @@ void tests() {
     test_convertStringDigitsTheEnd_severalWord();
     test_digitCorrespondingNumberOfSpaces_noNumbers();
     test_digitCorrespondingNumberOfSpaces_thereAreNumbers();
+    test_replace_w1SizeLessW2Size();
+    test_replace_w2SizeLessW1Size();
 }
 
 int main() {

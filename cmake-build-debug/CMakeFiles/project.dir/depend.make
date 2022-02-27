@@ -7,4 +7,5 @@ CMakeFiles/project.dir/main.c.obj: \
  ../string/tasks/convertStringDigitsTheEnd.h \
  ../string/tasks/digitCorrespondingNumberOfSpaces.h \
  ../string/tasks/removeExtraSpaces.h \
- ../string/tasks/removeNonLetters.h
+ ../string/tasks/removeNonLetters.h \
+ ../string/tasks/replace.h
