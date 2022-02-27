@@ -3,6 +3,7 @@
 #include "string/tasks/removeNonLetters.h"
 #include "string/tasks/removeExtraSpaces.h"
 #include "string/tasks/convertStringDigitsTheEnd.h"
+#include "string/tasks/digitCorrespondingNumberOfSpaces.h"
 
 int f(int a) {
     return '0' <= a && a <= '9';
@@ -50,6 +51,17 @@ void test_convertStringDigitsTheEnd_severalWord() {
     ASSERT_STRING("Hello123 World45", s);
 }
 
+void test_digitCorrespondingNumberOfSpaces_noNumbers() {
+    char s[] = "Hello World";
+    digitCorrespondingNumberOfSpaces(s);
+    ASSERT_STRING("Hello World", s);
+}
+
+void test_digitCorrespondingNumberOfSpaces_thereAreNumbers() {
+    char s[MAX_STRING_SIZE] = "A3B0C1";
+    digitCorrespondingNumberOfSpaces(s);
+    ASSERT_STRING("A   BC ", s);
+}
 
 void tests() {
     test_removeNonLetters_oneWord();
@@ -57,6 +69,8 @@ void tests() {
     test_convertStringDigitsTheEnd_oneWord1();
     test_convertStringDigitsTheEnd_oneWord2();
     test_convertStringDigitsTheEnd_severalWord();
+    test_digitCorrespondingNumberOfSpaces_noNumbers();
+    test_digitCorrespondingNumberOfSpaces_thereAreNumbers();
 }
 
 int main() {
