@@ -4,5 +4,6 @@
 CMakeFiles/project.dir/main.c.obj: \
  ../main.c \
  ../string/string_.h \
+ ../string/tasks/convertStringDigitsTheEnd.h \
  ../string/tasks/removeExtraSpaces.h \
  ../string/tasks/removeNonLetters.h

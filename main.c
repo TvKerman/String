@@ -2,6 +2,7 @@
 #include "string/string_.h"
 #include "string/tasks/removeNonLetters.h"
 #include "string/tasks/removeExtraSpaces.h"
+#include "string/tasks/convertStringDigitsTheEnd.h"
 
 int f(int a) {
     return '0' <= a && a <= '9';
@@ -26,18 +27,44 @@ void test_removeNonLetters_oneWord() {
 }
 
 void test_removeExtraSpaces_manySpace() {
-    char s[] = "Hi   123";
+    char s[] = " Hi   123 ";
     removeExtraSpaces(s);
-    ASSERT_STRING("Hi 123", s);
+    ASSERT_STRING(" Hi 123 ", s);
+}
+
+void test_convertStringDigitsTheEnd_oneWord1() {
+    char s[] = " H12i3 ";
+    convertStringDigitsTheEnd(s);
+    ASSERT_STRING(" Hi123 ", s);
+}
+
+void test_convertStringDigitsTheEnd_oneWord2() {
+    char s[] = "H12i3";
+    convertStringDigitsTheEnd(s);
+    ASSERT_STRING("Hi123", s);
+}
+
+void test_convertStringDigitsTheEnd_severalWord() {
+    char s[] = "H1e2ll3o W4or5ld";
+    convertStringDigitsTheEnd(s);
+    ASSERT_STRING("Hello123 World45", s);
 }
 
 
 void tests() {
     test_removeNonLetters_oneWord();
     test_removeExtraSpaces_manySpace();
+    test_convertStringDigitsTheEnd_oneWord1();
+    test_convertStringDigitsTheEnd_oneWord2();
+    test_convertStringDigitsTheEnd_severalWord();
 }
 
 int main() {
     tests();
+
+    //char s[] = "H1I23";
+    //convertStringDigitsTheEnd(s);
+    //printf("%s\n", s);
+
     return 0;
 }

@@ -5,6 +5,10 @@
 #define STRING_STRING__H
 
 #include <stdio.h>
+#include <stdbool.h>
+#define MAX_STRING_SIZE 1000
+
+char _stringBuffer[MAX_STRING_SIZE + 1];
 
 size_t strlen_(const char *begin);
 

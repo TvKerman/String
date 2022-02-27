@@ -15,10 +15,16 @@ string/tasks/removeNonLetters.h
 D:/Git/String/string/tasks/removeNonLetters.h
 string/tasks/removeExtraSpaces.h
 D:/Git/String/string/tasks/removeExtraSpaces.h
+string/tasks/convertStringDigitsTheEnd.h
+D:/Git/String/string/tasks/convertStringDigitsTheEnd.h
 
 D:/Git/String/string/string_.h
 stdio.h
 -
+stdbool.h
+-
+
+D:/Git/String/string/tasks/convertStringDigitsTheEnd.h
 
 D:/Git/String/string/tasks/removeExtraSpaces.h
 
