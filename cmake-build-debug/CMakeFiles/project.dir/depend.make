@@ -6,6 +6,7 @@ CMakeFiles/project.dir/main.c.obj: \
  ../string/string_.h \
  ../string/tasks/convertStringDigitsTheEnd.h \
  ../string/tasks/digitCorrespondingNumberOfSpaces.h \
+ ../string/tasks/isWordsLexicographicallyOrdered.h \
  ../string/tasks/removeExtraSpaces.h \
  ../string/tasks/removeNonLetters.h \
  ../string/tasks/replace.h

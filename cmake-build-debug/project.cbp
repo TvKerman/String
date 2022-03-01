@@ -125,6 +125,9 @@
 		<Unit filename="D:/Git/String/string/tasks/digitCorrespondingNumberOfSpaces.h">
 			<Option target="str"/>
 		</Unit>
+		<Unit filename="D:/Git/String/string/tasks/isWordsLexicographicallyOrdered.h">
+			<Option target="str"/>
+		</Unit>
 		<Unit filename="D:/Git/String/string/tasks/removeExtraSpaces.h">
 			<Option target="str"/>
 		</Unit>

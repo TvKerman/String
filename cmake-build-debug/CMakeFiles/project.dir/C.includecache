@@ -21,6 +21,8 @@ string/tasks/digitCorrespondingNumberOfSpaces.h
 D:/Git/String/string/tasks/digitCorrespondingNumberOfSpaces.h
 string/tasks/replace.h
 D:/Git/String/string/tasks/replace.h
+string/tasks/isWordsLexicographicallyOrdered.h
+D:/Git/String/string/tasks/isWordsLexicographicallyOrdered.h
 
 D:/Git/String/string/string_.h
 stdio.h
@@ -31,6 +33,8 @@ stdbool.h
 D:/Git/String/string/tasks/convertStringDigitsTheEnd.h
 
 D:/Git/String/string/tasks/digitCorrespondingNumberOfSpaces.h
+
+D:/Git/String/string/tasks/isWordsLexicographicallyOrdered.h
 
 D:/Git/String/string/tasks/removeExtraSpaces.h
 

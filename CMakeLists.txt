@@ -12,6 +12,7 @@ add_executable (project main.c)
          string/tasks/convertStringDigitsTheEnd.h
          string/tasks/digitCorrespondingNumberOfSpaces.h
          string/tasks/replace.h
+         string/tasks/isWordsLexicographicallyOrdered.h
          # string / tasks / digitToStartTransform . h
  # string / tasks / reverseWords . h
  # string / tasks / replaceDigitsBySpaces . h

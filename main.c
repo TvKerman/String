@@ -5,6 +5,7 @@
 #include "string/tasks/convertStringDigitsTheEnd.h"
 #include "string/tasks/digitCorrespondingNumberOfSpaces.h"
 #include "string/tasks/replace.h"
+#include "string/tasks/isWordsLexicographicallyOrdered.h"
 
 int f(int a) {
     return '0' <= a && a <= '9';
@@ -80,6 +81,51 @@ void test_replace_w2SizeLessW1Size() {
     ASSERT_STRING("Hello  You", s);
 }
 
+void test_isWordsLexicographicallyOrdered_orderedString1() {
+    char s[MAX_STRING_SIZE] = "A AA AAA";
+    if (isWordsLexicographicallyOrdered(s)) {
+        ASSERT_STRING("true", "true");
+    } else {
+        ASSERT_STRING("true", "false");
+    }
+}
+
+void test_isWordsLexicographicallyOrdered_orderedString2() {
+    char s[MAX_STRING_SIZE] = "AA AB BB";
+    if (isWordsLexicographicallyOrdered(s)) {
+        ASSERT_STRING("true", "true");
+    } else {
+        ASSERT_STRING("true", "false");
+    }
+}
+
+void test_isWordsLexicographicallyOrdered_NULLSymbols() {
+    char s[MAX_STRING_SIZE] = "";
+    if (isWordsLexicographicallyOrdered(s)) {
+        ASSERT_STRING("true", "true");
+    } else {
+        ASSERT_STRING("true", "false");
+    }
+}
+
+void test_isWordsLexicographicallyOrdered_equalWords() {
+    char s[MAX_STRING_SIZE] = "A A A A";
+    if (isWordsLexicographicallyOrdered(s)) {
+        ASSERT_STRING("true", "true");
+    } else {
+        ASSERT_STRING("true", "false");
+    }
+}
+
+void test_isWordsLexicographicallyOrdered_unorderedString() {
+    char s[MAX_STRING_SIZE] = "B A B C";
+    if (isWordsLexicographicallyOrdered(s)) {
+        ASSERT_STRING("false", "true");
+    } else {
+        ASSERT_STRING("false", "false");
+    }
+}
+
 
 void tests() {
     test_removeNonLetters_oneWord();
@@ -91,6 +137,11 @@ void tests() {
     test_digitCorrespondingNumberOfSpaces_thereAreNumbers();
     test_replace_w1SizeLessW2Size();
     test_replace_w2SizeLessW1Size();
+    test_isWordsLexicographicallyOrdered_orderedString1();
+    test_isWordsLexicographicallyOrdered_orderedString2();
+    test_isWordsLexicographicallyOrdered_NULLSymbols();
+    test_isWordsLexicographicallyOrdered_equalWords();
+    test_isWordsLexicographicallyOrdered_unorderedString();
 }
 
 int main() {

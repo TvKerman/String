@@ -5,7 +5,7 @@
 #define PROJECT_REPLACE_H
 
 int isEqualWord(WordDescriptor w1, WordDescriptor w2) {
-    while (w1.begin != (w1.end - 1) && w2.begin != (w2.end - 1) && *w1.begin == *w2.begin) {
+    while (w1.begin < (w1.end - 1) && w2.begin < (w2.end - 1) && *w1.begin == *w2.begin) {
         w1.begin++;
         w2.begin++;
     }
