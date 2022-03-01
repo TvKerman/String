@@ -5,10 +5,6 @@
 #ifndef PROJECT_CONVERTSTRINGDIGITSTHEEND_H
 #define PROJECT_CONVERTSTRINGDIGITSTHEEND_H
 
-typedef struct WordDescriptor {
-    char *begin; // позиция начала слова
-    char *end; // позиция первого символа, после последнего символа слова
-} WordDescriptor;
 
 int getWord(char *beginSearch, WordDescriptor *word) {
     word->begin = findNonSpace(beginSearch);

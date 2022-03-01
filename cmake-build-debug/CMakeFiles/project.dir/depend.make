@@ -9,4 +9,5 @@ CMakeFiles/project.dir/main.c.obj: \
  ../string/tasks/isWordsLexicographicallyOrdered.h \
  ../string/tasks/removeExtraSpaces.h \
  ../string/tasks/removeNonLetters.h \
- ../string/tasks/replace.h
+ ../string/tasks/replace.h \
+ ../string/tasks/wordsReverseOrder.h

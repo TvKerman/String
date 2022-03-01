@@ -6,6 +6,7 @@
 #include "string/tasks/digitCorrespondingNumberOfSpaces.h"
 #include "string/tasks/replace.h"
 #include "string/tasks/isWordsLexicographicallyOrdered.h"
+#include "string/tasks/wordsReverseOrder.h"
 
 int f(int a) {
     return '0' <= a && a <= '9';
@@ -126,6 +127,11 @@ void test_isWordsLexicographicallyOrdered_unorderedString() {
     }
 }
 
+void test_wordsReverseOrder_twoWords() {
+    char s[] = "BD ABC";
+    wordsReverseOrder(s);
+    ASSERT_STRING("ABC BD", s);
+}
 
 void tests() {
     test_removeNonLetters_oneWord();
@@ -142,6 +148,7 @@ void tests() {
     test_isWordsLexicographicallyOrdered_NULLSymbols();
     test_isWordsLexicographicallyOrdered_equalWords();
     test_isWordsLexicographicallyOrdered_unorderedString();
+    test_wordsReverseOrder_twoWords();
 }
 
 int main() {

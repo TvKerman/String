@@ -23,6 +23,8 @@ string/tasks/replace.h
 D:/Git/String/string/tasks/replace.h
 string/tasks/isWordsLexicographicallyOrdered.h
 D:/Git/String/string/tasks/isWordsLexicographicallyOrdered.h
+string/tasks/wordsReverseOrder.h
+D:/Git/String/string/tasks/wordsReverseOrder.h
 
 D:/Git/String/string/string_.h
 stdio.h
@@ -41,4 +43,6 @@ D:/Git/String/string/tasks/removeExtraSpaces.h
 D:/Git/String/string/tasks/removeNonLetters.h
 
 D:/Git/String/string/tasks/replace.h
+
+D:/Git/String/string/tasks/wordsReverseOrder.h
 

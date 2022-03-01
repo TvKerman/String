@@ -13,6 +13,20 @@
 
 char _stringBuffer[MAX_STRING_SIZE + 1];
 
+typedef struct WordDescriptor {
+    char *begin; // позиция начала слова
+    char *end; // позиция первого символа, после последнего символа слова
+} WordDescriptor;
+
+
+typedef struct BagOfWords {
+    WordDescriptor words[MAX_N_WORDS_IN_STRING];
+    size_t size;
+} BagOfWords;
+
+BagOfWords _bag;
+BagOfWords _bag2;
+
 size_t strlen_(const char *begin);
 
 char* find(char *begin, char *end, int ch);
