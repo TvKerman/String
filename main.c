@@ -128,9 +128,15 @@ void test_isWordsLexicographicallyOrdered_unorderedString() {
 }
 
 void test_wordsReverseOrder_twoWords() {
-    char s[] = "BD ABC";
+    char s[] = " BD ABC  ";
     wordsReverseOrder(s);
-    ASSERT_STRING("ABC BD", s);
+    ASSERT_STRING(" ABC BD  ", s);
+}
+
+void test_wordsReverseOrder_manyWords() {
+    char s[] = "A B   C    D";
+    wordsReverseOrder(s);
+    ASSERT_STRING("D C   B    A", s);
 }
 
 void tests() {
@@ -149,6 +155,7 @@ void tests() {
     test_isWordsLexicographicallyOrdered_equalWords();
     test_isWordsLexicographicallyOrdered_unorderedString();
     test_wordsReverseOrder_twoWords();
+    test_wordsReverseOrder_manyWords();
 }
 
 int main() {

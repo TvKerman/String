@@ -15,13 +15,13 @@ void getBagOfWords(BagOfWords *bag, char *s) {
 
 void wordsReverseOrder(char *s) {
     char copyString[MAX_STRING_SIZE];
-    copy(s, s + strlen_(s), copyString);
+    copy(s, s + strlen_(s) + 1, copyString);
     getBagOfWords(&_bag, copyString);
     if (_bag.size < 2) {
         return;
     }
 
-    char *beginDestination = s;
+    char *beginDestination = s + (_bag.words[0].begin - copyString);
     int size = _bag.size - 1;
     for (int i = size; i > 0; i--) {
         beginDestination = copy(_bag.words[i].begin, _bag.words[i].end, beginDestination);
