@@ -24,16 +24,52 @@ void assertString(const char *expected, char *got, char const *fileName, char co
         fprintf (stderr, "%s - OK\n", funcName);
 }
 
+void test_removeNonLetters_nullString() {
+    char s[] = "";
+    removeNonLetters(s);
+    ASSERT_STRING("", s);
+}
+
+void test_removeNonLetters_oneSpace() {
+    char s[] = " ";
+    removeNonLetters(s);
+    ASSERT_STRING("", s);
+}
+
 void test_removeNonLetters_oneWord() {
     char s[] = " Hi123 ";
     removeNonLetters(s);
     ASSERT_STRING("Hi123", s);
 }
 
+void test_removeExtraSpaces_nullString() {
+    char s[] = "";
+    removeExtraSpaces(s);
+    ASSERT_STRING("", s);
+}
+
+void test_removeExtraSpaces_oneSpace() {
+    char s[] = " ";
+    removeExtraSpaces(s);
+    ASSERT_STRING(" ", s);
+}
+
 void test_removeExtraSpaces_manySpace() {
     char s[] = " Hi   123 ";
     removeExtraSpaces(s);
     ASSERT_STRING(" Hi 123 ", s);
+}
+
+void test_convertStringDigitsTheEnd_nullString() {
+    char s[] = "";
+    convertStringDigitsTheEnd(s);
+    ASSERT_STRING("", s);
+}
+
+void test_convertStringDigitsTheEnd_nonDigits() {
+    char s[] = "is String";
+    convertStringDigitsTheEnd(s);
+    ASSERT_STRING("is String", s);
 }
 
 void test_convertStringDigitsTheEnd_oneWord1() {
@@ -54,6 +90,18 @@ void test_convertStringDigitsTheEnd_severalWord() {
     ASSERT_STRING("Hello123 World45", s);
 }
 
+void test_digitCorrespondingNumberOfSpaces_nullString() {
+    char s[] = "";
+    digitCorrespondingNumberOfSpaces(s);
+    ASSERT_STRING("", s);
+}
+
+void test_digitCorrespondingNumberOfSpaces_onlyDigits() {
+    char s[MAX_STRING_SIZE] = "32";
+    digitCorrespondingNumberOfSpaces(s);
+    ASSERT_STRING("     ", s);
+}
+
 void test_digitCorrespondingNumberOfSpaces_noNumbers() {
     char s[] = "Hello World";
     digitCorrespondingNumberOfSpaces(s);
@@ -65,6 +113,15 @@ void test_digitCorrespondingNumberOfSpaces_thereAreNumbers() {
     digitCorrespondingNumberOfSpaces(s);
     ASSERT_STRING("A   BC ", s);
 }
+
+void test_replace_noWordInString() {
+    char s[MAX_STRING_SIZE] = "Hello  World";
+    char w1[] = "Word";
+    char w2[] = "<No_name>";
+    replace(s, w1, w2);
+    ASSERT_STRING("Hello  World", s);
+}
+
 
 void test_replace_w1SizeLessW2Size() {
     char s[MAX_STRING_SIZE] = "Hello  World";
@@ -127,6 +184,13 @@ void test_isWordsLexicographicallyOrdered_unorderedString() {
     }
 }
 
+void test_wordsReverseOrder_nullString() {
+    char s[] = "";
+    wordsReverseOrder(s);
+    ASSERT_STRING("", s);
+}
+
+
 void test_wordsReverseOrder_twoWords() {
     char s[] = " BD ABC  ";
     wordsReverseOrder(s);
@@ -140,13 +204,22 @@ void test_wordsReverseOrder_manyWords() {
 }
 
 void tests() {
+    test_removeNonLetters_nullString();
+    test_removeNonLetters_oneSpace();
     test_removeNonLetters_oneWord();
+    test_removeExtraSpaces_nullString();
+    test_removeExtraSpaces_oneSpace();
     test_removeExtraSpaces_manySpace();
+    test_convertStringDigitsTheEnd_nullString();
+    test_convertStringDigitsTheEnd_nonDigits();
     test_convertStringDigitsTheEnd_oneWord1();
     test_convertStringDigitsTheEnd_oneWord2();
     test_convertStringDigitsTheEnd_severalWord();
+    test_digitCorrespondingNumberOfSpaces_nullString();
+    test_digitCorrespondingNumberOfSpaces_onlyDigits();
     test_digitCorrespondingNumberOfSpaces_noNumbers();
     test_digitCorrespondingNumberOfSpaces_thereAreNumbers();
+    test_replace_noWordInString();
     test_replace_w1SizeLessW2Size();
     test_replace_w2SizeLessW1Size();
     test_isWordsLexicographicallyOrdered_orderedString1();
@@ -154,6 +227,7 @@ void tests() {
     test_isWordsLexicographicallyOrdered_NULLSymbols();
     test_isWordsLexicographicallyOrdered_equalWords();
     test_isWordsLexicographicallyOrdered_unorderedString();
+    test_wordsReverseOrder_nullString();
     test_wordsReverseOrder_twoWords();
     test_wordsReverseOrder_manyWords();
 }

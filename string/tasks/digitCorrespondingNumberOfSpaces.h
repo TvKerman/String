@@ -20,6 +20,7 @@ void digitCorrespondingNumberOfSpaces(char *s) {
             *(s++) = *(_copyPointerStringBuffer++);
         }
     }
+    *s = '\0';
 }
 
 #endif //PROJECT_DIGITCORRESPONDINGNUMBEROFSPACES_H
