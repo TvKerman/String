@@ -15,14 +15,6 @@ int getWord(char *beginSearch, WordDescriptor *word) {
     return 1;
 }
 
-int isdigit(int a) {
-    return '0' <= a && a <= '9';
-}
-
-int isalpha(int a) {
-    return (a > '9' || a < '0') && a != ' ';
-}
-
 void digitToStart(WordDescriptor word) {
     char *endStringBuffer = copy( word.begin, word.end, _stringBuffer);
     char *recPosition = copyIfReverse(endStringBuffer - 1, _stringBuffer - 1, word.begin , isdigit);

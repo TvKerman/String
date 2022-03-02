@@ -7,9 +7,9 @@
 
 
 
-int isgraph(int a) {
-    return a != ' ';
-}
+//int isgraph(int a) {
+//    return a != ' ';
+//}
 
 char* getEndOfString(char *s) {
     return s + strlen_(s);

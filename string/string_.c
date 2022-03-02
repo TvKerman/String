@@ -5,6 +5,7 @@
 #include "string_.h"
 #include <memory.h>
 
+
 size_t strlen_(const char *begin) {
     char *end = begin;
     while (*end != '\0') {
@@ -23,7 +24,7 @@ char* find(char *begin, char *end, int ch) {
 }
 
 char* findNonSpace(char *begin) {
-    while (*begin != '\0' && *begin == ' ') {
+    while (*begin != '\0' && isspace(*begin)) {
         begin++;
     }
 
@@ -31,7 +32,7 @@ char* findNonSpace(char *begin) {
 }
 
 char* findSpace(char *begin) {
-    while (*begin != ' ' && *begin != '\0') {
+    while (!isspace(*begin) && *begin != '\0') {
         begin++;
     }
 
@@ -39,7 +40,7 @@ char* findSpace(char *begin) {
 }
 
 char* findNonSpaceReverse(char *rbegin, const char *rend) {
-    while (rbegin != rend && *rbegin == ' ') {
+    while (rbegin != rend && isspace(*rbegin)) {
         rbegin--;
     }
 
@@ -47,7 +48,7 @@ char* findNonSpaceReverse(char *rbegin, const char *rend) {
 }
 
 char* findSpaceReverse(char *rbegin, const char *rend) {
-    while (rbegin != rend && *rbegin != ' ') {
+    while (rbegin != rend && !isspace(*rbegin)) {
         rbegin--;
     }
 
@@ -55,7 +56,7 @@ char* findSpaceReverse(char *rbegin, const char *rend) {
 }
 
 int strcmp(const char *lhs, const char *rhs) {
-    while (*lhs != '\0' && *rhs != '\0' && *lhs == *rhs) {
+    while (*lhs == *rhs && *lhs != '\0') {
         lhs++;
         rhs++;
     }
@@ -73,10 +74,10 @@ char* copyIf(char *beginSource, const char *endSource, char *beginDestination, i
     size_t size = endSource - beginSource;
     for (size_t i = 0; i < size; i++) {
         if (f(*beginSource)) {
-            *(beginDestination++) = *(beginSource++);
-        } else {
-            beginSource++;
+            *(beginDestination++) = *beginSource;
         }
+
+        beginSource++;
     }
 
     return beginDestination;
@@ -86,10 +87,10 @@ char* copyIfReverse(char *rbeginSource, const char *rendSource, char *beginDesti
     size_t size = rbeginSource - rendSource;
     for (size_t i = 0; i < size; i++) {
         if (f(*rbeginSource)) {
-            *(beginDestination++) = *(rbeginSource--);
-        } else {
-            rbeginSource--;
+            *(beginDestination++) = *rbeginSource;
         }
+
+        rbeginSource--;
     }
 
     return beginDestination;

@@ -31,6 +31,8 @@ stdio.h
 -
 stdbool.h
 -
+ctype.h
+-
 
 D:/Git/String/string/tasks/convertStringDigitsTheEnd.h
 
