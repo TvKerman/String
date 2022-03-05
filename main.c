@@ -7,6 +7,7 @@
 #include "string/tasks/replace.h"
 #include "string/tasks/isWordsLexicographicallyOrdered.h"
 #include "string/tasks/wordsReverseOrder.h"
+#include "string/tasks/countOfPalindromeWords.h"
 
 int f(int a) {
     return '0' <= a && a <= '9';
@@ -203,6 +204,42 @@ void test_wordsReverseOrder_manyWords() {
     ASSERT_STRING("D C   B    A", s);
 }
 
+void test_countOfPalindromeWords_nullString() {
+    char s[] = "";
+    if (countOfPalindromeWords(s) == 0) {
+        ASSERT_STRING("true", "true");
+    } else {
+        ASSERT_STRING("false", "true");
+    }
+}
+
+void test_countOfPalindromeWords_oneSymbolInWords() {
+    char s[] = "A,B,C,D";
+    if (countOfPalindromeWords(s) == 4) {
+        ASSERT_STRING("true", "true");
+    } else {
+        ASSERT_STRING("false", "true");
+    }
+}
+
+void test_countOfPalindromeWords_commaString() {
+    char s[] = ",,,,,,";
+    if (countOfPalindromeWords(s) == 0) {
+        ASSERT_STRING("true", "true");
+    } else {
+        ASSERT_STRING("false", "true");
+    }
+}
+
+void test_countOfPalindromeWords() {
+    char s[] = "ABCCBA,ZXYXZ,ABCD";
+    if (countOfPalindromeWords(s) == 2) {
+        ASSERT_STRING("true", "true");
+    } else {
+        ASSERT_STRING("false", "true");
+    }
+}
+
 void tests() {
     test_removeNonLetters_nullString();
     test_removeNonLetters_oneSpace();
@@ -230,6 +267,10 @@ void tests() {
     test_wordsReverseOrder_nullString();
     test_wordsReverseOrder_twoWords();
     test_wordsReverseOrder_manyWords();
+    test_countOfPalindromeWords_nullString();
+    test_countOfPalindromeWords_oneSymbolInWords();
+    test_countOfPalindromeWords_commaString();
+    test_countOfPalindromeWords();
 }
 
 int main() {

@@ -14,6 +14,7 @@ add_executable (project main.c)
          string/tasks/replace.h
          string/tasks/isWordsLexicographicallyOrdered.h
          string/tasks/wordsReverseOrder.h
+         string/tasks/countOfPalindromeWords.h
          # string / tasks / digitToStartTransform . h
  # string / tasks / reverseWords . h
  # string / tasks / replaceDigitsBySpaces . h

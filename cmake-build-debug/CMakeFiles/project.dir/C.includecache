@@ -25,6 +25,8 @@ string/tasks/isWordsLexicographicallyOrdered.h
 D:/Git/String/string/tasks/isWordsLexicographicallyOrdered.h
 string/tasks/wordsReverseOrder.h
 D:/Git/String/string/tasks/wordsReverseOrder.h
+string/tasks/countOfPalindromeWords.h
+D:/Git/String/string/tasks/countOfPalindromeWords.h
 
 D:/Git/String/string/string_.h
 stdio.h
@@ -35,6 +37,8 @@ ctype.h
 -
 
 D:/Git/String/string/tasks/convertStringDigitsTheEnd.h
+
+D:/Git/String/string/tasks/countOfPalindromeWords.h
 
 D:/Git/String/string/tasks/digitCorrespondingNumberOfSpaces.h
 
