@@ -8,6 +8,7 @@
 #include "string/tasks/isWordsLexicographicallyOrdered.h"
 #include "string/tasks/wordsReverseOrder.h"
 #include "string/tasks/countOfPalindromeWords.h"
+#include "string/tasks/mergingStrings.h"
 
 int f(int a) {
     return '0' <= a && a <= '9';
@@ -240,6 +241,55 @@ void test_countOfPalindromeWords() {
     }
 }
 
+void test_mergingStrings_nullStrings() {
+    char s[] = "";
+    char s1[] = "";
+    char s2[] = "";
+    mergingStrings(s, s1, s2);
+    ASSERT_STRING("", s);
+}
+
+void test_mergingStrings_nullStringS2() {
+    char s[MAX_STRING_SIZE] = "";
+    char s1[] = "A BC DEF";
+    char s2[] = "";
+    mergingStrings(s, s1, s2);
+    ASSERT_STRING("A BC DEF", s);
+}
+
+void test_mergingStrings_nullStringS1() {
+    char s[MAX_STRING_SIZE] = "";
+    char s2[] = "A BC DEF";
+    char s1[] = "";
+    mergingStrings(s, s1, s2);
+    ASSERT_STRING("A BC DEF", s);
+}
+
+void test_mergingStrings_equalSizeStrings() {
+    char s[MAX_STRING_SIZE] = "";
+    char s1[] = "A BC DEF";
+    char s2[] = "AB CDE F";
+    mergingStrings(s, s1, s2);
+    ASSERT_STRING("A AB BC CDE DEF F", s);
+}
+
+void test_mergingStrings1() {
+    char s[MAX_STRING_SIZE] = "";
+    char s1[] = "A BC DEF";
+    char s2[] = "AB";
+    mergingStrings(s, s1, s2);
+    ASSERT_STRING("A AB BC DEF", s);
+}
+
+void test_mergingStrings2() {
+    char s[MAX_STRING_SIZE] = "";
+    char s1[] = "A";
+    char s2[] = "AB CDE F";
+    mergingStrings(s, s1, s2);
+    ASSERT_STRING("A AB CDE F", s);
+}
+
+
 void tests() {
     test_removeNonLetters_nullString();
     test_removeNonLetters_oneSpace();
@@ -271,6 +321,12 @@ void tests() {
     test_countOfPalindromeWords_oneSymbolInWords();
     test_countOfPalindromeWords_commaString();
     test_countOfPalindromeWords();
+    test_mergingStrings_nullStrings();
+    test_mergingStrings_nullStringS2();
+    test_mergingStrings_nullStringS1();
+    test_mergingStrings_equalSizeStrings();
+    test_mergingStrings1();
+    test_mergingStrings2();
 }
 
 int main() {
