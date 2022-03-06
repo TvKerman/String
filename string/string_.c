@@ -40,7 +40,7 @@ char* findSpace(char *begin) {
 }
 
 char* findNonSpaceReverse(char *rbegin, const char *rend) {
-    while (rbegin != rend && isspace(*rbegin)) {
+    while (rbegin > rend && isspace(*rbegin)) {
         rbegin--;
     }
 
@@ -48,7 +48,7 @@ char* findNonSpaceReverse(char *rbegin, const char *rend) {
 }
 
 char* findSpaceReverse(char *rbegin, const char *rend) {
-    while (rbegin != rend && !isspace(*rbegin)) {
+    while (rbegin > rend && !isspace(*rbegin)) {
         rbegin--;
     }
 

@@ -24,11 +24,12 @@ void digitToStart(WordDescriptor word) {
 
 bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word) {
     word->end = findNonSpaceReverse(rbegin, rend);
+
     if (word->end == rend) {
         return false;
     }
 
-    word->begin = findSpaceReverse(word->end, rend);
+    word->begin = findSpaceReverse(word->end++, rend) + 1;
     return true;
 }
 

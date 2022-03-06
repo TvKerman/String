@@ -9,6 +9,7 @@
 #include "string/tasks/wordsReverseOrder.h"
 #include "string/tasks/countOfPalindromeWords.h"
 #include "string/tasks/mergingStrings.h"
+#include "string/tasks/reverseWordOrderInAString.h"
 
 int f(int a) {
     return '0' <= a && a <= '9';
@@ -289,6 +290,30 @@ void test_mergingStrings2() {
     ASSERT_STRING("A AB CDE F", s);
 }
 
+void test_reverseWordOrderInAString_nullString() {
+    char s[] = "";
+    reverseWordOrderInAString(s);
+    ASSERT_STRING("", s);
+}
+
+void test_reverseWordOrderInAString_noWord() {
+    char s[] = "      ";
+    reverseWordOrderInAString(s);
+    ASSERT_STRING("      ", s);
+}
+
+void test_reverseWordOrderInAString_oneWord() {
+    char s[] = " ABCD ";
+    reverseWordOrderInAString(s);
+    ASSERT_STRING("ABCD", s);
+}
+
+void test_reverseWordOrderInAString_manyWords() {
+    char s[] = "A  B C D";
+    reverseWordOrderInAString(s);
+    ASSERT_STRING("D C B A", s);
+}
+
 
 void tests() {
     test_removeNonLetters_nullString();
@@ -327,6 +352,10 @@ void tests() {
     test_mergingStrings_equalSizeStrings();
     test_mergingStrings1();
     test_mergingStrings2();
+    test_reverseWordOrderInAString_nullString();
+    test_reverseWordOrderInAString_noWord();
+    test_reverseWordOrderInAString_oneWord();
+    test_reverseWordOrderInAString_manyWords();
 }
 
 int main() {
