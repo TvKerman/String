@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <assert.h>
 #include "string/string_.h"
 #include "string/tasks/removeNonLetters.h"
 #include "string/tasks/removeExtraSpaces.h"
@@ -10,6 +11,7 @@
 #include "string/tasks/countOfPalindromeWords.h"
 #include "string/tasks/mergingStrings.h"
 #include "string/tasks/reverseWordOrderInAString.h"
+#include "string/tasks/getWordBeforeFirstWordWithA.h"
 
 int f(int a) {
     return '0' <= a && a <= '9';
@@ -26,6 +28,9 @@ void assertString(const char *expected, char *got, char const *fileName, char co
     } else
         fprintf (stderr, "%s - OK\n", funcName);
 }
+
+
+
 
 void test_removeNonLetters_nullString() {
     char s[] = "";
@@ -314,6 +319,27 @@ void test_reverseWordOrderInAString_manyWords() {
     ASSERT_STRING("D C B A", s);
 }
 
+void testAll_getWordBeforeFirstWordWithA () {
+    char * beginWord , * endWord ;
+
+    char s1[] = "";
+    assert(getWordBeforeFirstWordWithA(s1, &beginWord, &endWord) == EMPTY_STRING);
+
+    char s2[] = " ABC";
+    assert(getWordBeforeFirstWordWithA(s2, &beginWord, &endWord) == FIRST_WORD_WITH_A);
+
+    char s3[] = "BC A";
+    assert(getWordBeforeFirstWordWithA(s3, &beginWord, &endWord) == WORD_FOUND);
+    char got[MAX_WORD_SIZE];
+    copy(beginWord, endWord, got);
+    got[endWord - beginWord] = '\0';
+    ASSERT_STRING("BC", got);
+
+    char s4[] = "B Q WE YR OW IUWR ";
+    assert(getWordBeforeFirstWordWithA(s4, &beginWord, &endWord) == NOT_FOUND_A_WORD_WITH_A);
+}
+
+
 
 void tests() {
     test_removeNonLetters_nullString();
@@ -356,6 +382,7 @@ void tests() {
     test_reverseWordOrderInAString_noWord();
     test_reverseWordOrderInAString_oneWord();
     test_reverseWordOrderInAString_manyWords();
+    testAll_getWordBeforeFirstWordWithA();
 }
 
 int main() {

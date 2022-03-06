@@ -17,6 +17,7 @@ add_executable (project main.c)
          string/tasks/countOfPalindromeWords.h
          string/tasks/mergingStrings.h
          string/tasks/reverseWordOrderInAString.h
+         string/tasks/getWordBeforeFirstWordWithA.h
          # string / tasks / digitToStartTransform . h
  # string / tasks / reverseWords . h
  # string / tasks / replaceDigitsBySpaces . h
