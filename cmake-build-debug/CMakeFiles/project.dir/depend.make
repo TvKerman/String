@@ -9,6 +9,7 @@ CMakeFiles/project.dir/main.c.obj: \
  ../string/tasks/digitCorrespondingNumberOfSpaces.h \
  ../string/tasks/getWordBeforeFirstWordWithA.h \
  ../string/tasks/isWordsLexicographicallyOrdered.h \
+ ../string/tasks/lastWordInFirstStringInSecondString.h \
  ../string/tasks/mergingStrings.h \
  ../string/tasks/removeExtraSpaces.h \
  ../string/tasks/removeNonLetters.h \

@@ -12,6 +12,7 @@
 #include "string/tasks/mergingStrings.h"
 #include "string/tasks/reverseWordOrderInAString.h"
 #include "string/tasks/getWordBeforeFirstWordWithA.h"
+#include "string/tasks/lastWordInFirstStringInSecondString.h"
 
 int f(int a) {
     return '0' <= a && a <= '9';
@@ -339,7 +340,35 @@ void testAll_getWordBeforeFirstWordWithA () {
     assert(getWordBeforeFirstWordWithA(s4, &beginWord, &endWord) == NOT_FOUND_A_WORD_WITH_A);
 }
 
+void test_lastWordInFirstStringInSecondString_nullStrings() {
+    char s1[] = "";
+    char s2[] = "";
+    char string[MAX_STRING_SIZE];
 
+    WordDescriptor word = lastWordInFirstStringInSecondString (s1, s2);
+    wordDescriptorToString(word, string);
+    ASSERT_STRING("", string);
+}
+
+void test_lastWordInFirstStringInSecondString_noIdenticalWords() {
+    char s1[] = "ABC a b";
+    char s2[] = "abc A B";
+    char string[MAX_STRING_SIZE];
+
+    WordDescriptor word = lastWordInFirstStringInSecondString (s1, s2);
+    wordDescriptorToString(word, string);
+    ASSERT_STRING("", string);
+}
+
+void test_lastWordInFirstStringInSecondString_haveIdenticalWords() {
+    char s1[] = "ABC A B";
+    char s2[] = "A B ABC";
+    char string[MAX_STRING_SIZE];
+
+    WordDescriptor word = lastWordInFirstStringInSecondString (s1, s2);
+    wordDescriptorToString(word, string);
+    ASSERT_STRING("B", string);
+}
 
 void tests() {
     test_removeNonLetters_nullString();
@@ -383,6 +412,9 @@ void tests() {
     test_reverseWordOrderInAString_oneWord();
     test_reverseWordOrderInAString_manyWords();
     testAll_getWordBeforeFirstWordWithA();
+    test_lastWordInFirstStringInSecondString_nullStrings();
+    test_lastWordInFirstStringInSecondString_noIdenticalWords();
+    test_lastWordInFirstStringInSecondString_haveIdenticalWords();
 }
 
 int main() {

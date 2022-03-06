@@ -48,4 +48,6 @@ char* copyIf(char *beginSource, const char *endSource, char *beginDestination, i
 
 char* copyIfReverse(char *rbeginSource, const char *rendSource, char *beginDestination, int (*f)(int));
 
+void wordDescriptorToString(WordDescriptor word, char *destination);
+
 #endif //STRING_STRING__H

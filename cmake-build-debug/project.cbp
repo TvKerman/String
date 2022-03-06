@@ -134,6 +134,9 @@
 		<Unit filename="D:/Git/String/string/tasks/isWordsLexicographicallyOrdered.h">
 			<Option target="str"/>
 		</Unit>
+		<Unit filename="D:/Git/String/string/tasks/lastWordInFirstStringInSecondString.h">
+			<Option target="str"/>
+		</Unit>
 		<Unit filename="D:/Git/String/string/tasks/mergingStrings.h">
 			<Option target="str"/>
 		</Unit>

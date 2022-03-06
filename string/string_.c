@@ -95,3 +95,8 @@ char* copyIfReverse(char *rbeginSource, const char *rendSource, char *beginDesti
 
     return beginDestination;
 }
+
+void wordDescriptorToString(WordDescriptor word, char *destination) {
+    destination = copy(word.begin, word.end, destination);
+    *destination = '\0';
+}
