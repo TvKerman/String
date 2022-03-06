@@ -364,7 +364,6 @@ void test_lastWordInFirstStringInSecondString_haveIdenticalWords() {
     char s1[] = "ABC A B";
     char s2[] = "A B ABC";
     char string[MAX_STRING_SIZE];
-
     WordDescriptor word = lastWordInFirstStringInSecondString (s1, s2);
     wordDescriptorToString(word, string);
     ASSERT_STRING("B", string);
