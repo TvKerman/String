@@ -13,6 +13,7 @@
 #include "string/tasks/reverseWordOrderInAString.h"
 #include "string/tasks/getWordBeforeFirstWordWithA.h"
 #include "string/tasks/lastWordInFirstStringInSecondString.h"
+#include "string/tasks/isIdenticalWordsInString.h"
 
 int f(int a) {
     return '0' <= a && a <= '9';
@@ -369,6 +370,34 @@ void test_lastWordInFirstStringInSecondString_haveIdenticalWords() {
     ASSERT_STRING("B", string);
 }
 
+void test_isIdenticalWordsInString_nullString() {
+    char s[] = "";
+    if (isIdenticalWordsInString(s)) {
+        ASSERT_STRING("false", "true");
+    } else {
+        ASSERT_STRING("false", "false");
+    }
+}
+
+void test_isIdenticalWordsInString_noIdenticalWords() {
+    char s[] = "A AB BC C";
+    if (isIdenticalWordsInString(s)) {
+        ASSERT_STRING("false", "true");
+    } else {
+        ASSERT_STRING("false", "false");
+    }
+}
+
+void test_isIdenticalWordsInString_haveIdenticalWords() {
+    char s[] = "A AB BC AB";
+    if (isIdenticalWordsInString(s)) {
+        ASSERT_STRING("true", "true");
+    } else {
+        ASSERT_STRING("true", "false");
+    }
+}
+
+
 void tests() {
     test_removeNonLetters_nullString();
     test_removeNonLetters_oneSpace();
@@ -414,6 +443,9 @@ void tests() {
     test_lastWordInFirstStringInSecondString_nullStrings();
     test_lastWordInFirstStringInSecondString_noIdenticalWords();
     test_lastWordInFirstStringInSecondString_haveIdenticalWords();
+    test_isIdenticalWordsInString_nullString();
+    test_isIdenticalWordsInString_noIdenticalWords();
+    test_isIdenticalWordsInString_haveIdenticalWords();
 }
 
 int main() {
