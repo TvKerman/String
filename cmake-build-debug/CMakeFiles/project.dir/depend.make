@@ -7,6 +7,7 @@ CMakeFiles/project.dir/main.c.obj: \
  ../string/tasks/convertStringDigitsTheEnd.h \
  ../string/tasks/countOfPalindromeWords.h \
  ../string/tasks/digitCorrespondingNumberOfSpaces.h \
+ ../string/tasks/getStringFromTheWordsOfDifferentFromTheLastWord.h \
  ../string/tasks/getWordBeforeFirstWordWithA.h \
  ../string/tasks/isIdenticalWordsInString.h \
  ../string/tasks/isPairOfWordsMadeOfIdenticalLetters.h \

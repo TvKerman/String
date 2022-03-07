@@ -128,6 +128,9 @@
 		<Unit filename="D:/Git/String/string/tasks/digitCorrespondingNumberOfSpaces.h">
 			<Option target="str"/>
 		</Unit>
+		<Unit filename="D:/Git/String/string/tasks/getStringFromTheWordsOfDifferentFromTheLastWord.h">
+			<Option target="str"/>
+		</Unit>
 		<Unit filename="D:/Git/String/string/tasks/getWordBeforeFirstWordWithA.h">
 			<Option target="str"/>
 		</Unit>

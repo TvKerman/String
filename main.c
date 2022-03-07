@@ -16,6 +16,7 @@
 #include "string/tasks/lastWordInFirstStringInSecondString.h"
 #include "string/tasks/isIdenticalWordsInString.h"
 #include "string/tasks/isPairOfWordsMadeOfIdenticalLetters.h"
+#include "string/tasks/getStringFromTheWordsOfDifferentFromTheLastWord.h"
 
 int f(int a) {
     return '0' <= a && a <= '9';
@@ -444,6 +445,34 @@ void test_isPairOfWordsMadeOfIdenticalLetters_noIdenticalLetters() {
     }
 }
 
+void test_getStringFromTheWordsOfDifferentFromTheLastWord_nullString() {
+    char s[] = "";
+    char newString[MAX_STRING_SIZE] = "";
+    getStringFromTheWordsOfDifferentFromTheLastWord(s, newString);
+    ASSERT_STRING("", newString);
+}
+
+void test_getStringFromTheWordsOfDifferentFromTheLastWord_oneWord() {
+    char s[] = "  A ";
+    char newString[MAX_STRING_SIZE] = "";
+    getStringFromTheWordsOfDifferentFromTheLastWord(s, newString);
+    ASSERT_STRING("", newString);
+}
+
+void test_getStringFromTheWordsOfDifferentFromTheLastWord_allWordsEqualLastWord() {
+    char s[] = "A A A A";
+    char newString[MAX_STRING_SIZE] = "";
+    getStringFromTheWordsOfDifferentFromTheLastWord(s, newString);
+    ASSERT_STRING("", newString);
+}
+
+void test_getStringFromTheWordsOfDifferentFromTheLastWord_noAllWordsEqualLastWord() {
+    char s[] = "A B C D A";
+    char newString[MAX_STRING_SIZE] = "";
+    getStringFromTheWordsOfDifferentFromTheLastWord(s, newString);
+    ASSERT_STRING("B C D", newString);
+}
+
 void tests() {
     test_removeNonLetters_nullString();
     test_removeNonLetters_oneSpace();
@@ -497,6 +526,10 @@ void tests() {
     test_isPairOfWordsMadeOfIdenticalLetters_haveIdenticalWords();
     test_isPairOfWordsMadeOfIdenticalLetters_haveIdenticalLetters();
     test_isPairOfWordsMadeOfIdenticalLetters_noIdenticalLetters();
+    test_getStringFromTheWordsOfDifferentFromTheLastWord_nullString();
+    test_getStringFromTheWordsOfDifferentFromTheLastWord_oneWord();
+    test_getStringFromTheWordsOfDifferentFromTheLastWord_allWordsEqualLastWord();
+    test_getStringFromTheWordsOfDifferentFromTheLastWord_noAllWordsEqualLastWord();
 }
 
 int main() {
