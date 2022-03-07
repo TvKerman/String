@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <assert.h>
 #include "string/string_.h"
 #include "string/tasks/removeNonLetters.h"
@@ -14,6 +15,7 @@
 #include "string/tasks/getWordBeforeFirstWordWithA.h"
 #include "string/tasks/lastWordInFirstStringInSecondString.h"
 #include "string/tasks/isIdenticalWordsInString.h"
+#include "string/tasks/isPairOfWordsMadeOfIdenticalLetters.h"
 
 int f(int a) {
     return '0' <= a && a <= '9';
@@ -397,6 +399,50 @@ void test_isIdenticalWordsInString_haveIdenticalWords() {
     }
 }
 
+void test_isPairOfWordsMadeOfIdenticalLetters_nullString() {
+    char s[] = "";
+    if (isPairOfWordsMadeOfIdenticalLetters(s)) {
+        ASSERT_STRING("false", "true");
+    } else {
+        ASSERT_STRING("false", "false");
+    }
+}
+
+void test_isPairOfWordsMadeOfIdenticalLetters_noIdenticalWords() {
+    char s[] = "A AB BC C";
+    if (isPairOfWordsMadeOfIdenticalLetters(s)) {
+        ASSERT_STRING("false", "true");
+    } else {
+        ASSERT_STRING("false", "false");
+    }
+}
+
+void test_isPairOfWordsMadeOfIdenticalLetters_haveIdenticalWords() {
+    char s[] = "A AB BC AB";
+    if (isPairOfWordsMadeOfIdenticalLetters(s)) {
+        ASSERT_STRING("true", "true");
+    } else {
+        ASSERT_STRING("true", "false");
+    }
+}
+
+void test_isPairOfWordsMadeOfIdenticalLetters_haveIdenticalLetters() {
+    char s[] = "A AB BC BA";
+    if (isPairOfWordsMadeOfIdenticalLetters(s)) {
+        ASSERT_STRING("true", "true");
+    } else {
+        ASSERT_STRING("true", "false");
+    }
+}
+
+void test_isPairOfWordsMadeOfIdenticalLetters_noIdenticalLetters() {
+    char s[] = "A ABB AB C";
+    if (isPairOfWordsMadeOfIdenticalLetters(s)) {
+        ASSERT_STRING("false", "true");
+    } else {
+        ASSERT_STRING("false", "false");
+    }
+}
 
 void tests() {
     test_removeNonLetters_nullString();
@@ -446,6 +492,11 @@ void tests() {
     test_isIdenticalWordsInString_nullString();
     test_isIdenticalWordsInString_noIdenticalWords();
     test_isIdenticalWordsInString_haveIdenticalWords();
+    test_isPairOfWordsMadeOfIdenticalLetters_nullString();
+    test_isPairOfWordsMadeOfIdenticalLetters_noIdenticalWords();
+    test_isPairOfWordsMadeOfIdenticalLetters_haveIdenticalWords();
+    test_isPairOfWordsMadeOfIdenticalLetters_haveIdenticalLetters();
+    test_isPairOfWordsMadeOfIdenticalLetters_noIdenticalLetters();
 }
 
 int main() {

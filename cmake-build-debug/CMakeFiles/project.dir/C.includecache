@@ -9,6 +9,8 @@
 D:/Git/String/main.c
 stdio.h
 -
+stdlib.h
+-
 assert.h
 -
 string/string_.h
@@ -39,6 +41,8 @@ string/tasks/lastWordInFirstStringInSecondString.h
 D:/Git/String/string/tasks/lastWordInFirstStringInSecondString.h
 string/tasks/isIdenticalWordsInString.h
 D:/Git/String/string/tasks/isIdenticalWordsInString.h
+string/tasks/isPairOfWordsMadeOfIdenticalLetters.h
+D:/Git/String/string/tasks/isPairOfWordsMadeOfIdenticalLetters.h
 
 D:/Git/String/string/string_.h
 stdio.h
@@ -57,6 +61,8 @@ D:/Git/String/string/tasks/digitCorrespondingNumberOfSpaces.h
 D:/Git/String/string/tasks/getWordBeforeFirstWordWithA.h
 
 D:/Git/String/string/tasks/isIdenticalWordsInString.h
+
+D:/Git/String/string/tasks/isPairOfWordsMadeOfIdenticalLetters.h
 
 D:/Git/String/string/tasks/isWordsLexicographicallyOrdered.h
 
