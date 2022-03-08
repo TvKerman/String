@@ -17,6 +17,7 @@ CMakeFiles/project.dir/main.c.obj: \
  ../string/tasks/mergingStrings.h \
  ../string/tasks/removeExtraSpaces.h \
  ../string/tasks/removeNonLetters.h \
+ ../string/tasks/removeWordsThatMatchLastWord.h \
  ../string/tasks/replace.h \
  ../string/tasks/reverseWordOrderInAString.h \
  ../string/tasks/wordsReverseOrder.h

@@ -18,6 +18,7 @@
 #include "string/tasks/isPairOfWordsMadeOfIdenticalLetters.h"
 #include "string/tasks/getStringFromTheWordsOfDifferentFromTheLastWord.h"
 #include "string/tasks/lastWordInTheFirstLineThatIsInTheSecondLine.h"
+#include "string/tasks/removeWordsThatMatchLastWord.h"
 
 int f(int a) {
     return '0' <= a && a <= '9';
@@ -504,6 +505,24 @@ void test_lastWordInTheFirstStringThatISInTheSecondString_haveIdenticalWords() {
     ASSERT_STRING("B", string);
 }
 
+void test_removeWordsThatMatchLastWord_nullString() {
+    char s[] = "";
+    removeWordsThatMatchLastWord(s);
+    ASSERT_STRING("", s);
+}
+
+void test_removeWordsThatMatchLastWord_allWordsMatchLastWord() {
+    char s[] = "A A A A A";
+    removeWordsThatMatchLastWord(s);
+    ASSERT_STRING("", s);
+}
+
+void test_removeWordsThatMatchLastWord_noAllWordsMatchLastWord() {
+    char s[] = "  A B  A   C A";
+    removeWordsThatMatchLastWord(s);
+    ASSERT_STRING("  B  C ", s);
+}
+
 
 void tests() {
     test_removeNonLetters_nullString();
@@ -565,6 +584,9 @@ void tests() {
     test_lastWordInTheFirstStringThatISInTheSecondString_nullStrings();
     test_lastWordInTheFirstStringThatISInTheSecondString_noIdenticalWords();
     test_lastWordInTheFirstStringThatISInTheSecondString_haveIdenticalWords();
+    test_removeWordsThatMatchLastWord_nullString();
+    test_removeWordsThatMatchLastWord_allWordsMatchLastWord();
+    test_removeWordsThatMatchLastWord_noAllWordsMatchLastWord();
 }
 
 int main() {

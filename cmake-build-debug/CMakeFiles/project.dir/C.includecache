@@ -47,6 +47,8 @@ string/tasks/getStringFromTheWordsOfDifferentFromTheLastWord.h
 D:/Git/String/string/tasks/getStringFromTheWordsOfDifferentFromTheLastWord.h
 string/tasks/lastWordInTheFirstLineThatIsInTheSecondLine.h
 D:/Git/String/string/tasks/lastWordInTheFirstLineThatIsInTheSecondLine.h
+string/tasks/removeWordsThatMatchLastWord.h
+D:/Git/String/string/tasks/removeWordsThatMatchLastWord.h
 
 D:/Git/String/string/string_.h
 stdio.h
@@ -81,6 +83,8 @@ D:/Git/String/string/tasks/mergingStrings.h
 D:/Git/String/string/tasks/removeExtraSpaces.h
 
 D:/Git/String/string/tasks/removeNonLetters.h
+
+D:/Git/String/string/tasks/removeWordsThatMatchLastWord.h
 
 D:/Git/String/string/tasks/replace.h
 

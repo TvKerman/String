@@ -158,6 +158,9 @@
 		<Unit filename="D:/Git/String/string/tasks/removeNonLetters.h">
 			<Option target="str"/>
 		</Unit>
+		<Unit filename="D:/Git/String/string/tasks/removeWordsThatMatchLastWord.h">
+			<Option target="str"/>
+		</Unit>
 		<Unit filename="D:/Git/String/string/tasks/replace.h">
 			<Option target="str"/>
 		</Unit>
