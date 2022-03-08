@@ -4,6 +4,7 @@
 CMakeFiles/project.dir/main.c.obj: \
  ../main.c \
  ../string/string_.h \
+ ../string/tasks/addToAStringContainingFewerWords.h \
  ../string/tasks/convertStringDigitsTheEnd.h \
  ../string/tasks/countOfPalindromeWords.h \
  ../string/tasks/digitCorrespondingNumberOfSpaces.h \

@@ -19,6 +19,7 @@
 #include "string/tasks/getStringFromTheWordsOfDifferentFromTheLastWord.h"
 #include "string/tasks/lastWordInTheFirstLineThatIsInTheSecondLine.h"
 #include "string/tasks/removeWordsThatMatchLastWord.h"
+#include "string/tasks/addToAStringContainingFewerWords.h"
 
 int f(int a) {
     return '0' <= a && a <= '9';
@@ -523,6 +524,37 @@ void test_removeWordsThatMatchLastWord_noAllWordsMatchLastWord() {
     ASSERT_STRING("  B  C ", s);
 }
 
+void test_addToAStringContainingFewerWords_nullStrings() {
+    char s1[] = "";
+    char s2[] = "";
+    addToAStringContainingFewerWords(s1, s2);
+    ASSERT_STRING("", s1);
+    ASSERT_STRING("", s2);
+}
+
+void test_addToAStringContainingFewerWords_oneNullString() {
+    char s1[MAX_STRING_SIZE] = "";
+    char s2[] = "A  B  BC  DEC";
+    addToAStringContainingFewerWords(s1, s2);
+    ASSERT_STRING("A B BC DEC", s1);
+    ASSERT_STRING("A  B  BC  DEC", s2);
+}
+
+void test_addToAStringContainingFewerWords_equalCountWords() {
+    char s1[] = "B C V ZV";
+    char s2[] = "A  B  BC  DEC";
+    addToAStringContainingFewerWords(s1, s2);
+    ASSERT_STRING("B C V ZV", s1);
+    ASSERT_STRING("A  B  BC  DEC", s2);
+}
+
+void test_addToAStringContainingFewerWords_noEqualCountWords() {
+    char s1[MAX_STRING_SIZE] = "B C ZV";
+    char s2[] = "A  B  BC  DEC MID";
+    addToAStringContainingFewerWords(s1, s2);
+    ASSERT_STRING("B C ZV DEC MID", s1);
+    ASSERT_STRING("A  B  BC  DEC MID", s2);
+}
 
 void tests() {
     test_removeNonLetters_nullString();
@@ -587,6 +619,10 @@ void tests() {
     test_removeWordsThatMatchLastWord_nullString();
     test_removeWordsThatMatchLastWord_allWordsMatchLastWord();
     test_removeWordsThatMatchLastWord_noAllWordsMatchLastWord();
+    test_addToAStringContainingFewerWords_nullStrings();
+    test_addToAStringContainingFewerWords_oneNullString();
+    test_addToAStringContainingFewerWords_equalCountWords();
+    test_addToAStringContainingFewerWords_noEqualCountWords();
 }
 
 int main() {
