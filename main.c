@@ -17,6 +17,7 @@
 #include "string/tasks/isIdenticalWordsInString.h"
 #include "string/tasks/isPairOfWordsMadeOfIdenticalLetters.h"
 #include "string/tasks/getStringFromTheWordsOfDifferentFromTheLastWord.h"
+#include "string/tasks/lastWordInTheFirstLineThatIsInTheSecondLine.h"
 
 int f(int a) {
     return '0' <= a && a <= '9';
@@ -473,6 +474,37 @@ void test_getStringFromTheWordsOfDifferentFromTheLastWord_noAllWordsEqualLastWor
     ASSERT_STRING("B C D", newString);
 }
 
+
+void test_lastWordInTheFirstStringThatISInTheSecondString_nullStrings() {
+    char s1[] = "";
+    char s2[] = "";
+    char string[MAX_STRING_SIZE];
+
+    WordDescriptor word = lastWordInTheFirstStringThatISInTheSecondString(s1, s2);
+    wordDescriptorToString(word, string);
+    ASSERT_STRING("", string);
+}
+
+void test_lastWordInTheFirstStringThatISInTheSecondString_noIdenticalWords() {
+    char s1[] = "ABC a b";
+    char s2[] = "abc A B";
+    char string[MAX_STRING_SIZE];
+
+    WordDescriptor word = lastWordInTheFirstStringThatISInTheSecondString(s1, s2);
+    wordDescriptorToString(word, string);
+    ASSERT_STRING("", string);
+}
+
+void test_lastWordInTheFirstStringThatISInTheSecondString_haveIdenticalWords() {
+    char s1[] = "ABC A B";
+    char s2[] = "A B ABC";
+    char string[MAX_STRING_SIZE];
+    WordDescriptor word = lastWordInTheFirstStringThatISInTheSecondString(s1, s2);
+    wordDescriptorToString(word, string);
+    ASSERT_STRING("B", string);
+}
+
+
 void tests() {
     test_removeNonLetters_nullString();
     test_removeNonLetters_oneSpace();
@@ -530,6 +562,9 @@ void tests() {
     test_getStringFromTheWordsOfDifferentFromTheLastWord_oneWord();
     test_getStringFromTheWordsOfDifferentFromTheLastWord_allWordsEqualLastWord();
     test_getStringFromTheWordsOfDifferentFromTheLastWord_noAllWordsEqualLastWord();
+    test_lastWordInTheFirstStringThatISInTheSecondString_nullStrings();
+    test_lastWordInTheFirstStringThatISInTheSecondString_noIdenticalWords();
+    test_lastWordInTheFirstStringThatISInTheSecondString_haveIdenticalWords();
 }
 
 int main() {

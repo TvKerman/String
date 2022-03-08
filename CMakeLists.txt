@@ -22,6 +22,7 @@ add_executable (project main.c)
          string/tasks/isIdenticalWordsInString.h
          string/tasks/isPairOfWordsMadeOfIdenticalLetters.h
          string/tasks/getStringFromTheWordsOfDifferentFromTheLastWord.h
+         string/tasks/lastWordInTheFirstLineThatIsInTheSecondLine.h
          # string / tasks / digitToStartTransform . h
  # string / tasks / reverseWords . h
  # string / tasks / replaceDigitsBySpaces . h
