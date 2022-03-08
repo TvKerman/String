@@ -25,14 +25,7 @@ add_executable (project main.c)
          string/tasks/lastWordInTheFirstLineThatIsInTheSecondLine.h
          string/tasks/removeWordsThatMatchLastWord.h
          string/tasks/addToAStringContainingFewerWords.h
-         # string / tasks / digitToStartTransform . h
- # string / tasks / reverseWords . h
- # string / tasks / replaceDigitsBySpaces . h
- # ...
- # < файл с решением задачи >
- # ...
- # string / tasks / hasPairOfWordsWithEqualLetterSet . h
- # string / tasks / printWordsNonEqualLastWord . h
+         string/tasks/isEachLetterOfTheWordIncludedInTheString.h
 )
 
  # описываем, что для запуска project потребуется сборка tasks

@@ -137,6 +137,9 @@
 		<Unit filename="D:/Git/String/string/tasks/getWordBeforeFirstWordWithA.h">
 			<Option target="str"/>
 		</Unit>
+		<Unit filename="D:/Git/String/string/tasks/isEachLetterOfTheWordIncludedInTheString.h">
+			<Option target="str"/>
+		</Unit>
 		<Unit filename="D:/Git/String/string/tasks/isIdenticalWordsInString.h">
 			<Option target="str"/>
 		</Unit>

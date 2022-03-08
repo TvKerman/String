@@ -20,6 +20,7 @@
 #include "string/tasks/lastWordInTheFirstLineThatIsInTheSecondLine.h"
 #include "string/tasks/removeWordsThatMatchLastWord.h"
 #include "string/tasks/addToAStringContainingFewerWords.h"
+#include "string/tasks/isEachLetterOfTheWordIncludedInTheString.h"
 
 int f(int a) {
     return '0' <= a && a <= '9';
@@ -556,6 +557,58 @@ void test_addToAStringContainingFewerWords_noEqualCountWords() {
     ASSERT_STRING("A  B  BC  DEC MID", s2);
 }
 
+void test_isEachLetterOfTheWordIncludedInTheString_nullStringAndWord() {
+    char s[] = "";
+    char w[] = "";
+    if (isEachLetterOfTheWordIncludedInTheString(s, w)) {
+        ASSERT_STRING("true", "true");
+    } else {
+        ASSERT_STRING("true", "false");
+    }
+}
+
+void test_isEachLetterOfTheWordIncludedInTheString_nullWord() {
+    char s[] = "ABk JBgkld khbndel";
+    char w[] = "";
+    if (isEachLetterOfTheWordIncludedInTheString(s, w)) {
+        ASSERT_STRING("true", "true");
+    } else {
+        ASSERT_STRING("true", "false");
+    }
+}
+
+void test_isEachLetterOfTheWordIncludedInTheString_nullString() {
+    char s[] = "";
+    char w[] = "lnfbkn";
+    if (isEachLetterOfTheWordIncludedInTheString(s, w)) {
+        ASSERT_STRING("false", "true");
+    } else {
+        ASSERT_STRING("false", "false");
+    }
+}
+
+void test_isEachLetterOfTheWordIncludedInTheString1() {
+    char s[] = "ABCDE";
+    char w[] = "AABBCCDDEE";
+    if (isEachLetterOfTheWordIncludedInTheString(s, w)) {
+        ASSERT_STRING("true", "true");
+    } else {
+        ASSERT_STRING("true", "false");
+    }
+}
+
+void test_isEachLetterOfTheWordIncludedInTheString2() {
+    char s[] = "ABCD";
+    char w[] = "AABBCCDDEE";
+    if (isEachLetterOfTheWordIncludedInTheString(s, w)) {
+        ASSERT_STRING("false", "true");
+    } else {
+        ASSERT_STRING("false", "false");
+    }
+}
+
+
+
 void tests() {
     test_removeNonLetters_nullString();
     test_removeNonLetters_oneSpace();
@@ -623,6 +676,11 @@ void tests() {
     test_addToAStringContainingFewerWords_oneNullString();
     test_addToAStringContainingFewerWords_equalCountWords();
     test_addToAStringContainingFewerWords_noEqualCountWords();
+    test_isEachLetterOfTheWordIncludedInTheString_nullStringAndWord();
+    test_isEachLetterOfTheWordIncludedInTheString_nullWord();
+    test_isEachLetterOfTheWordIncludedInTheString_nullString();
+    test_isEachLetterOfTheWordIncludedInTheString1();
+    test_isEachLetterOfTheWordIncludedInTheString2();
 }
 
 int main() {
